@@ -5,6 +5,7 @@
     "ng": "ng",
     "heroku-postbuild": "ng build --prod",
     "start": "angular-clients-of-the-bank index.html $PORT",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
