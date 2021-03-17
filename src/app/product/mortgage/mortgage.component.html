@@ -1,0 +1,22 @@
+<div class="container">
+<h1>Lista kredytów hipotecznych klienta</h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Id kredytu</th>
+    <th scope="col">Kwota kredytu</th>
+    <th scope="col">Oprocentowanie</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let mortgage of mortgages" >
+    <th scope="row">{{mortgage.id}}</th>
+    <td>{{mortgage.mortgageAmount}}</td>
+    <td>{{mortgage.interest}}</td>
+  </tr>
+
+  </tbody>
+</table>
+<a routerLink="">Powrót do strony głównej</a>
+</div>

@@ -1,0 +1,53 @@
+<div class="container">
+  <br>
+  <br>
+  <form class="row g-3" (ngSubmit)="addNewUser()">
+    <div class="col-md-4">
+      <div>
+        <label for="username" class="form-label">Nazwa użytkownika: </label>
+      </div>
+      <input type="text" id="username" class="form-control"  name="username"
+             [(ngModel)]="newUser.username"
+             [class.is-invalid]="submitted && validationErrors.username"
+             [class.is-valid]="submitted && !validationErrors.username">
+      <div class="invalid-feedback" *ngFor="let error of validationErrors.username">
+        {{error}}
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div>
+        <label for="role" class="form-label">Rola: </label>
+      </div>
+      <input type="text" id="role" class="form-control"
+             [(ngModel)]="newUser.role" name="role"
+             [class.is-invalid]="submitted && validationErrors.role"
+             [class.is-valid]="submitted && !validationErrors.role">
+      <div class="invalid-feedback" *ngFor="let error of validationErrors.role">
+        {{error}}
+      </div>
+
+    </div>
+    <div class="col-md-4">
+      <div>
+        <label for="password" class="form-label">Hasło:</label>
+      </div>
+      <input type="text" id="password" class="form-control"
+             [(ngModel)]="newUser.password" name="paswsord"
+             [class.is-invalid]="submitted && validationErrors.password"
+             [class.is-valid]="submitted && !validationErrors.password">
+      <div class="invalid-feedback" *ngFor="let error of validationErrors.password">
+        {{error}}
+      </div>
+    </div>
+    <div class="col-12">
+      <br>
+      <button class="btn btn-primary" type="submit" >Dodaj użytkownika</button>
+    </div>
+  </form>
+  <br>
+  <br>
+  <br>
+  <a routerLink="">Powrót do strony głównej</a>
+</div>
+
+

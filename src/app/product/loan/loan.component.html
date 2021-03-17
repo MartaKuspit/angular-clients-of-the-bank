@@ -1,0 +1,22 @@
+<div class="container">
+<h1>Lista pożyczek/kredytów bankowych klienta</h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Id kredytu</th>
+    <th scope="col">Kwota pożyczki/kredytu</th>
+    <th scope="col">Oprocentowanie</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let loan of loans" >
+    <th scope="row">{{loan.id}}</th>
+    <td>{{loan.loanAmount}}</td>
+    <td>{{loan.interest}}</td>
+  </tr>
+
+  </tbody>
+</table>
+<a routerLink="">Powrót do strony głównej</a>
+</div>

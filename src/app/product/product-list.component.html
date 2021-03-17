@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Produkty klienta:  {{foundClient.firstName}} {{foundClient.lastName}}</h1>
+  <div><a routerLink="../../account/{{foundClient.id}}"> Konta bankowe:  {{howmanyAccounts}}</a></div>
+  <div><a routerLink="../../deposit/{{foundClient.id}}"> Depozyty: {{howmanyDeposits}}</a></div>
+  <div><a routerLink="../../loan/{{foundClient.id}}"> Kredyty gotówkowe: {{howmanyLoans}}</a></div>
+  <div><a routerLink="../../mortgage/{{foundClient.id}}"> Kredyty hipoteczne: {{howmanyMortgages}}</a></div>
+  <a routerLink="">Powrót do strony głównej</a>
+</div>
+

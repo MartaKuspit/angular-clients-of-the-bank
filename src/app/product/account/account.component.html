@@ -1,0 +1,23 @@
+<div class="container">
+<h1>Lista kont bankowych klienta</h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Id konta</th>
+    <th scope="col">Rodzaj konta</th>
+    <th scope="col">Stan konta</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let account of accounts" >
+    <th scope="row">{{account.id}}</th>
+    <td>{{account.accountType}}</td>
+    <td>{{account.balance}}</td>
+  </tr>
+
+  </tbody>
+</table>
+<a routerLink="">Powrót do strony głównej</a>
+</div>
+

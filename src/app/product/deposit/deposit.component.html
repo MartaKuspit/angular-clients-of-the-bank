@@ -1,0 +1,22 @@
+<div class="container">
+<h1>Lista lokat/depozytów bankowych klienta</h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Id depozytu</th>
+    <th scope="col">Kwota depozytu/lokaty</th>
+    <th scope="col">Oprocentowanie</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let deposit of deposits" >
+    <th scope="row">{{deposit.id}}</th>
+    <td>{{deposit.depositAmount}}</td>
+    <td>{{deposit.interest}}</td>
+  </tr>
+
+  </tbody>
+</table>
+<a routerLink="">Powrót do strony głównej</a>
+</div>

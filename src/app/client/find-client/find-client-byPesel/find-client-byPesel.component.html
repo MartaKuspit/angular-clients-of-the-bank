@@ -1,0 +1,69 @@
+
+<div class="container">
+<form class="row g-3" (ngSubmit)="findClient()" >
+  <div class="col-auto">
+    <label for="inputPassword2" class="visually-hidden">Pesel Klienta</label>
+    <input type="text" class="form-control" id="inputPassword2" placeholder="Pesel Klienta" name="clientPesel" [(ngModel)]="clientPesel">
+    <br>
+    <button type="submit" class="btn btn-primary mb-3">Znajdź Klienta</button>
+  </div>
+</form>
+<table class="table table-striped" *ngIf="submitted === true" >
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Imię</th>
+    <th scope="col">Nazwisko</th>
+    <th scope="col">Pesel</th>
+    <th scope="col">Akcja</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">{{foundClient.id}}</th>
+    <td>{{foundClient.firstName}}</td>
+    <td>{{foundClient.lastName}}</td>
+    <td>{{foundClient.pesel}}</td>
+    <td><input type="button" value="Usuń" (click)="deleteClient(foundClient)">
+      <br>
+      <br>
+        <input type="button" value="Edytuj" routerLink="../../edit-client/{{foundClient.id}}">
+    </td>
+  </tr>
+  </tbody>
+</table>
+  <br>
+  <div *ngIf="submitted === true">
+    <h3>Adresy Klienta </h3> </div>
+  <button type="button" class="btn btn-primary mb-3" routerLink="../../../address/{{foundClient.id}}"
+          *ngIf="submitted === true">Dodaj adres
+  </button>
+  <table class="table table-striped" *ngIf="submitted === true">
+    <thead>
+    <tr>
+      <th scope="col">Ulica</th>
+      <th scope="col">Nr mieszkania</th>
+      <th scope="col">Kod pocztowy</th>
+      <th scope="col">Miasto</th>
+      <th scope="col">?</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let address of addresses">
+      <th scope="row">{{address.street}}   {{address.streetNumber}}</th>
+      <td>{{address.flatNumber}}</td>
+      <td>{{address.zip}}</td>
+      <td>{{address.city}}</td>
+      <td><input type="button" value="Usuń" (click)="deleteAddress(address)">
+        <br>
+        <br>
+        <input type="button" value="Edytuj" routerLink="../../../address/edit-address/{{address.id}}"><br>
+        <br>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+<a routerLink="">Powrót do strony głównej</a>
+</div>
+

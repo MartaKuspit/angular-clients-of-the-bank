@@ -1,0 +1,23 @@
+
+<div class="container">
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Ulica</th>
+    <th scope="col">Nr mieszkania</th>
+    <th scope="col">Kod pocztowy</th>
+    <th scope="col">Miasto</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let address of foundAddresses">
+    <th scope="row">{{address.street}}   {{address.streetNumber}}</th>
+    <td>{{address.flatNumber}}</td>
+    <td>{{address.zip}}</td>
+    <td>{{address.city}}</td>
+  </tr>
+
+  </tbody>
+</table>
+</div>
+

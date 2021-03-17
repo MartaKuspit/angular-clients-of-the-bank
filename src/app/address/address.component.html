@@ -1,0 +1,64 @@
+
+<div class="container">
+  <br>
+  <br>
+  <form class="row g-3" (ngSubmit)="addAddressToClient()">
+    <div class="col-md-4">
+      <div><label for="street" class="form-label">Ulica</label></div>
+      <input type="text" id="street" class="form-control" placeholder="Ulica" name="street"
+             [(ngModel)]="newAddress.street"
+             [class.is-invalid]="submitted && validationErrors.street"
+             [class.is-valid]="submitted && !validationErrors.street">
+      <div class="invalid-feedback" *ngFor="let error of validationErrors.street">
+        {{error}}
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div><label for="streetNumber" class="form-label">Nr ulicy</label></div>
+      <input type="text" id="streetNumber" class="form-control" placeholder="Nr ulicy" name="streetNumber"
+             [(ngModel)]="newAddress.streetNumber"
+             [class.is-invalid]="submitted && validationErrors.streetNumber"
+             [class.is-valid]="submitted && !validationErrors.streetNumber">
+      <div class="invalid-feedback" *ngFor="let error of validationErrors.streetNumber">
+        {{error}}
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div><label for="flatNumber" class="form-label">Nr mieszkania</label></div>
+      <input type="text" id="flatNumber" class="form-control" placeholder="Nr mieszkania" name="flatNumber"
+             [(ngModel)]="newAddress.flatNumber"
+             [class.is-invalid]="submitted && validationErrors.flatNumber"
+             [class.is-valid]="submitted && !validationErrors.flatNumber">
+      <div class="invalid-feedback" *ngFor="let error of validationErrors.flatNumber">
+        {{error}}
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div><label for="city" class="form-label">Miasto</label></div>
+      <input type="text" id="city" class="form-control" placeholder="Miasto" name="city"
+             [(ngModel)]="newAddress.city"
+             [class.is-invalid]="submitted && validationErrors.city"
+             [class.is-valid]="submitted && !validationErrors.city">
+      <div class="invalid-feedback" *ngFor="let error of validationErrors.city">
+        {{error}}
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div><label for="zip" class="form-label">Kod pocztowy (00-000)</label></div>
+      <input type="text" id="zip" class="form-control" placeholder="00-000" name="zip"
+             [(ngModel)]="newAddress.zip"
+             [class.is-invalid]="submitted && validationErrors.zip"
+             [class.is-valid]="submitted && !validationErrors.zip">
+      <div class="invalid-feedback" *ngFor="let error of validationErrors.zip">
+        {{error}}
+      </div>
+    </div>
+    <div class="col-12">
+      <br>
+      <button class="btn btn-primary" type="submit" >Zapisz</button>
+    </div>
+  </form>
+  <br>
+  <br>
+  <a routerLink="">Powrót do strony głównej</a>
+</div>

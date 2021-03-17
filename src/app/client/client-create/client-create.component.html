@@ -1,0 +1,53 @@
+<div class="container">
+  <br>
+  <br>
+  <form class="row g-3" (ngSubmit)="create()">
+    <div class="col-md-4">
+      <div>
+        <label for="firstName" class="form-label">Imię: </label>
+      </div>
+      <input type="text" id="firstName" class="form-control" placeholder="Imię" name="firstName"
+             [(ngModel)]="newClient.firstName" name="firstName"
+             [class.is-invalid]="submitted && validationErrors.firstName"
+             [class.is-valid]="submitted && !validationErrors.firstName">
+      <div class="invalid-feedback" *ngFor="let error of validationErrors.firstName">
+        {{error}}
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div>
+        <label for="lastName" class="form-label">Nazwisko: </label>
+      </div>
+      <input type="text" id="lastName" class="form-control" placeholder="Nazwisko"
+             [(ngModel)]="newClient.lastName" name="lastName"
+             [class.is-invalid]="submitted && validationErrors.lastName"
+             [class.is-valid]="submitted && !validationErrors.lastName">
+      <div class="invalid-feedback" *ngFor="let error of validationErrors.lastName">
+        {{error}}
+      </div>
+
+    </div>
+    <div class="col-md-4">
+      <div>
+        <label for="pesel" class="form-label">Pesel:</label>
+      </div>
+      <input type="text" id="pesel" class="form-control" placeholder="Pesel"
+             [(ngModel)]="newClient.pesel" name="pesel"
+             [class.is-invalid]="submitted && validationErrors.pesel"
+             [class.is-valid]="submitted && !validationErrors.pesel">
+      <div class="invalid-feedback" *ngFor="let error of validationErrors.pesel">
+        {{error}}
+      </div>
+    </div>
+    <div class="col-12">
+      <br>
+      <button class="btn btn-primary" type="submit" >Stwórz klienta</button>
+    </div>
+  </form>
+  <br>
+  <br>
+  <br>
+  <a routerLink="">Powrót do strony głównej</a>
+</div>
+
+

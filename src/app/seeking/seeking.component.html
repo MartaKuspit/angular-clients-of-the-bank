@@ -1,0 +1,68 @@
+<div class="container">
+  <h1>Wyniki wyszukiwania klientów dla frazy: "{{seekword}}"</h1>
+  <br>
+  <div *ngIf="seekword.includes('kon')"> Konta bankowe</div>
+  <table class="table table-striped" *ngIf="seekword.includes('kon')"  >
+    <thead>
+    <tr>
+      <th scope="col">Id </th>
+      <th scope="col">Imię i nazwisko </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let client of clients" >
+      <th scope="row">{{client.id}}</th>
+      <td><a routerLink="../../product/account/{{client.id}}"> {{client.firstName}} {{client.lastName}}</a></td>
+    </tr>
+    </tbody>
+  </table>
+  <div *ngIf="seekword.includes('dep') || seekword.includes('lok')"> Lokaty/depozyty</div>
+  <table class="table table-striped" *ngIf="seekword.includes('dep') || seekword.includes('lok')"  >
+    <thead>
+    <tr>
+      <th scope="col">Id </th>
+      <th scope="col">Imię i nazwisko </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let client of clients" >
+      <th scope="row">{{client.id}}</th>
+      <td><a routerLink="../../product/deposit/{{client.id}}"> {{client.firstName}} {{client.lastName}}</a></td>
+    </tr>
+    </tbody>
+  </table>
+  <div *ngIf="seekword.includes('poz') || seekword.includes('poż') || seekword.includes('kre')"> Kredyty gotówkowe/Pożyczki</div>
+  <table class="table table-striped" *ngIf="seekword.includes('poz') || seekword.includes('poż') || seekword.includes('kre')">
+  <thead>
+    <tr>
+      <th scope="col">Id </th>
+      <th scope="col">Imię i nazwisko </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let client of clients" >
+      <th scope="row">{{client.id}}</th>
+      <td><a routerLink="../../product/loan/{{client.id}}"> {{client.firstName}} {{client.lastName}}</a></td>
+    </tr>
+    </tbody>
+  </table>
+  <div *ngIf="seekword.includes('hip')"> Kredyty hipoteczne</div>
+<table class="table table-striped" *ngIf="seekword.includes('hip')"  >
+    <thead>
+    <tr>
+      <th scope="col">Id </th>
+      <th scope="col">Imię i nazwisko </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let client of clients" >
+      <th scope="row">{{client.id}}</th>
+      <td><a routerLink="../../product/mortgage/{{client.id}}"> {{client.firstName}} {{client.lastName}}</a></td>
+    </tr>
+    </tbody>
+  </table>
+
+
+<a routerLink="">Powrót do strony głównej</a>
+
+</div>

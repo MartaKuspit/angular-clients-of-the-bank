@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+</head>
+<body>
+<div class="container">
+  <form class="row gx-3 gy-2 align-items-center" (ngSubmit)="saveChangesInAddress()">
+    <div class="col-sm-4">
+      <label for="street" class="visually-hidden">Ulica</label>
+      <input type="text" id="street" class="form-control" placeholder="{{oldAddress.street}}" name="street"
+             [(ngModel)]="newAddress.street"
+             [class.is-invalid]="submitted && validationErrors.street"
+             [class.is-valid]="submitted && !validationErrors.street">
+      <div class="invalid-feedback" *ngFor="let error of validationErrors.street">
+        {{error}}
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <label for="streetNumber" class="visually-hidden">Nr ulicy</label>
+      <input type="text" id="streetNumber" class="form-control" placeholder="{{oldAddress.streetNumber}}" name="streetNumber"
+             [(ngModel)]="newAddress.streetNumber"
+             [class.is-invalid]="submitted && validationErrors.streetNumber"
+             [class.is-valid]="submitted && !validationErrors.streetNumber">
+      <div class="invalid-feedback" *ngFor="let error of validationErrors.streetNumber">
+        {{error}}
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <label for="flatNumber" class="visually-hidden">Nr mieszkania</label>
+      <input type="text" id="flatNumber" class="form-control" placeholder="{{oldAddress.flatNumber}}" name="flatNumber"
+             [(ngModel)]="newAddress.flatNumber"
+             [class.is-invalid]="submitted && validationErrors.flatNumber"
+             [class.is-valid]="submitted && !validationErrors.flatNumber">
+      <div class="invalid-feedback" *ngFor="let error of validationErrors.flatNumber">
+        {{error}}
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <label for="zip" class="visually-hidden">Kod pocztowy (00-000)</label>
+      <input type="text" id="zip" class="form-control" placeholder="{{oldAddress.zip}}" name="zip"
+             [(ngModel)]="newAddress.zip"
+             [class.is-invalid]="submitted && validationErrors.zip"
+             [class.is-valid]="submitted && !validationErrors.zip">
+      <div class="invalid-feedback" *ngFor="let error of validationErrors.zip">
+        {{error}}
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <label for="city" class="visually-hidden">Miasto</label>
+      <input type="text" id="city" class="form-control" placeholder="{{oldAddress.city}}" name="city"
+             [(ngModel)]="newAddress.city"
+             [class.is-invalid]="submitted && validationErrors.city"
+             [class.is-valid]="submitted && !validationErrors.city">
+      <div class="invalid-feedback" *ngFor="let error of validationErrors.city">
+        {{error}}
+      </div>
+    </div>
+    <div class="col-12">
+      <br>
+      <button type="submit" class="btn btn-primary">Zapisz</button>
+    </div>
+  </form>
+  <br>
+  <br>
+  <a routerLink="">Powrót do strony głównej</a>
+</div>
+</body>
+</html>
