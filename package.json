@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start": "dist/angular-my-clients-base/index.html"
+    "start": "http-server-spa dist/angular-my-clients-base index.html $PORT"
 
   },
   "private": true,
