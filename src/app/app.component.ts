@@ -18,8 +18,8 @@ export class AppComponent {
   clients: Client[] = [];
   baseUrl = environment.baseUrl;
 
-  constructor(private httpClient: HttpClient, private router: Router) {
-  }
+  // constructor(private httpClient: HttpClient, private router: Router) {
+  // }
   // @HostListener('window:beforeunload')
   // onWindowUnload(): void{
   //   localStorage.removeItem('authorizationHeader');
