@@ -14,7 +14,7 @@ import {FindClientByPeselComponent} from './client/find-client/find-client-byPes
 import {AddressComponent} from './address/address.component';
 import {EditAddressComponent} from './address/edit-address/edit-address.component';
 import {AddressViewComponent} from './address/address-view/address-view.component';
-// import {AuthorizationInterceptor} from './authorization.interceptor';
+import {AuthorizationInterceptor} from './authorization.interceptor';
 import {AddNewUserComponent} from './user/add-new-user/add-new-user.component';
 import {UserListComponent} from './user/user-list/user-list.component';
 import {DeleteUserComponent} from './user/delete-user/delete-user.component';
@@ -132,11 +132,11 @@ const routes: Routes = [{
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  // providers: [{
-  //   useClass: AuthorizationInterceptor,
-  //   multi: true,
-  //   provide: HTTP_INTERCEPTORS
-  // }],
+  providers: [{
+    useClass: AuthorizationInterceptor,
+    multi: true,
+    provide: HTTP_INTERCEPTORS
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule {
