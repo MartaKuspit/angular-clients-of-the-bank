@@ -1,21 +1,21 @@
 <div class="container">
   <br>
   <br>
-<!--  <form (ngSubmit)="onLoginFormSubmit()" *ngIf="!user" class="row-cols-lg-3">-->
-<!--    <div >-->
-<!--  <label>-->
-<!--    Login: <input type="text" class="form-control" name="username" [(ngModel)]="username">-->
-<!--  </label>-->
-<!--  <label>-->
-<!--    Hasło: <input type="text" class="form-control" name="password" [(ngModel)]="password">-->
-<!--  </label>-->
-<!--      <br>-->
-<!--      <br>-->
-<!--    </div>-->
-<!--  <input class="btn btn-primary" type="submit"  value="Zaloguj">-->
-<!--</form>-->
-<!--<div *ngIf="user">-->
-<!--  <input type="button"class="btn btn-primary" value="Wyloguj" (click)="logout()">-->
+  <form (ngSubmit)="onLoginFormSubmit()" *ngIf="!user" class="row-cols-lg-3">
+    <div >
+  <label>
+    Login: <input type="text" class="form-control" name="username" [(ngModel)]="username">
+  </label>
+  <label>
+    Hasło: <input type="text" class="form-control" name="password" [(ngModel)]="password">
+  </label>
+      <br>
+      <br>
+    </div>
+  <input class="btn btn-primary" type="submit"  value="Zaloguj">
+</form>
+<div *ngIf="user">
+  <input type="button"class="btn btn-primary" value="Wyloguj" (click)="logout()">
   <h1>WITAMY W BAZIE KLIENTÓW BANKU "XYZ"</h1>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
@@ -37,10 +37,10 @@
           <button class="btn btn-outline-success" type="submit" routerLink="/seeking/{{seekword}}" >Szukaj</button>
         </form>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item" >
+        <li class="nav-item"  *ngIf="user.role === 'ROLE_ADMIN'">
           <a class="nav-link active" aria-current="page" routerLink="/user/add-new-user">Dodaj użytkownika</a>
         </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="user.role === 'ROLE_ADMIN'">
           <a class="nav-link active" aria-current="page" routerLink="/user/user-list">Lista użytkowników</a>
         </li>
           <li class="nav-item" >
@@ -58,5 +58,5 @@
   <br>
   <br>
 
-<!--</div>-->
+</div>
 <router-outlet></router-outlet>
