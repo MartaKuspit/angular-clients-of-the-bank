@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {User} from './user';
 import {Client} from './client';
 import {environment} from '../environments/environment';
+import {stringify} from 'querystring';
 
 
 @Component({
@@ -13,7 +14,7 @@ import {environment} from '../environments/environment';
 export class AppComponent {
   username: string;
   password: string;
-   user: User = null;
+  user: User;    // =null
   seekword: string;
   clients: Client[] = [];
   baseUrl = environment.baseUrl;
