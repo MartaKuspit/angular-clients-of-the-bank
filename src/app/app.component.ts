@@ -13,7 +13,7 @@ import {environment} from '../environments/environment';
 export class AppComponent {
   username: string;
   password: string;
-  user: User = null;
+  // user: User = null;
   seekword: string;
   clients: Client[] = [];
   baseUrl = environment.baseUrl;
