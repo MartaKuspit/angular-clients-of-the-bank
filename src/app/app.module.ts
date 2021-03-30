@@ -24,6 +24,10 @@ import {SeekingComponent} from './seeking/seeking.component';
 import {DepositComponent} from './product/deposit/deposit.component';
 import {LoanComponent} from './product/loan/loan.component';
 import {MortgageComponent} from './product/mortgage/mortgage.component';
+import {NewAccountComponent} from './product/account/new-account/new-account.component';
+import {NewDepositComponent} from './product/deposit/new-deposit/new-deposit.component';
+import {NewLoanComponent} from './product/loan/new-loan/new-loan.component';
+import {NewMortgageComponent} from './product/mortgage/new-mortgage/new-mortgage.component';
 
 
 const routes: Routes = [{
@@ -101,6 +105,22 @@ const routes: Routes = [{
   {
     path: 'seeking/:seekword',
     component: SeekingComponent
+  },
+  {
+    path: 'account/new-account/:clientId',
+    component: NewAccountComponent
+  },
+  {
+    path: 'deposit/new-deposit/:clientId',
+    component: NewDepositComponent
+  },
+  {
+    path: 'loan/new-loan/:clientId',
+    component: NewLoanComponent
+  },
+  {
+    path: 'mortgage/new-mortgage/:clientId',
+    component: NewMortgageComponent
   }
   ];
 
@@ -124,7 +144,11 @@ const routes: Routes = [{
     LoanComponent,
     MortgageComponent,
     ProductListComponent,
-    SeekingComponent
+    SeekingComponent,
+    NewAccountComponent,
+    NewDepositComponent,
+    NewLoanComponent,
+    NewMortgageComponent
   ],
   imports: [
     BrowserModule,

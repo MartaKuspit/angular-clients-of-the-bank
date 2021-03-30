@@ -1,0 +1,39 @@
+<div class="container">
+  <br>
+  <br>
+  <form class="row g-6" (ngSubmit)="addAccount()" >
+    <div class="col-md-4">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" [(ngModel)]="newAccount.accountType" value="KONTO_OSOBISTE" >
+        <label class="form-check-label" for="flexRadioDefault1">
+          Konto osobiste
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" [(ngModel)]="newAccount.accountType" value="KONTO_FIRMOWE"  checked>
+        <label class="form-check-label" for="flexRadioDefault2">
+         Konto firmowe
+        </label>
+      </div>
+      <br>
+      <br>
+    <div class="row-g-6">
+      <div>
+        <label for="balance" class="form-label">Stan konta</label>
+      </div>
+      <input type="number" id="balance" class="form-control" placeholder="0"
+             [(ngModel)]="newAccount.balance" name="balance">
+    </div>
+    </div>
+
+    <div class="col-12">
+      <br>
+      <br>
+      <button class="btn btn-primary" type="submit" >Dodaj konto</button>
+    </div>
+  </form>
+  <br>
+  <br>
+  <br>
+  <a routerLink="">Powrót do strony głównej</a>
+</div>

@@ -1,0 +1,28 @@
+<div class="container">
+  <br>
+  <br>
+  <form class="row g-3" (ngSubmit)="addLoan()">
+    <div class="col-md-4">
+      <div>
+        <label for="loanAmount" class="form-label">Kwota kredytu/pożyczki </label>
+      </div>
+      <input type="number" id="loanAmount" class="form-control"  name="loanAmount"
+             [(ngModel)]="newLoan.loanAmount" name="loanAmount">
+    </div>
+    <div class="col-md-4">
+      <div>
+        <label for="interest" class="form-label">Oprocentowanie </label>
+      </div>
+      <input type="number" id="interest" class="form-control"
+             [(ngModel)]="newLoan.interest" name="interest">
+    </div>
+    <div class="col-12">
+      <br>
+      <button class="btn btn-primary" type="submit" >Uruchom kredyt</button>
+    </div>
+  </form>
+ <br>
+  <br>
+  <br>
+  <a routerLink="">Powrót do strony głównej</a>
+</div>

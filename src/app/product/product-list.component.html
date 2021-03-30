@@ -1,9 +1,22 @@
 <div class="container">
   <h1>Produkty klienta:  {{foundClient.firstName}} {{foundClient.lastName}}</h1>
-  <div><a routerLink="../../account/{{foundClient.id}}"> Konta bankowe:  {{howmanyAccounts}}</a></div>
-  <div><a routerLink="../../deposit/{{foundClient.id}}"> Depozyty: {{howmanyDeposits}}</a></div>
-  <div><a routerLink="../../loan/{{foundClient.id}}"> Kredyty gotówkowe: {{howmanyLoans}}</a></div>
-  <div><a routerLink="../../mortgage/{{foundClient.id}}"> Kredyty hipoteczne: {{howmanyMortgages}}</a></div>
+  <div><a routerLink="../../account/{{foundClient.id}}"><h2>Konta bankowe:  {{howmanyAccounts}}
+  </h2> </a>
+    <button type="button" class="btn btn-outline-dark" routerLink="../../../account/new-account/{{foundClient.id}}">Dodaj konto</button>
+  </div>
+  <br>
+  <div><a routerLink="../../deposit/{{foundClient.id}}"><h2> Depozyty: {{howmanyDeposits}}</h2></a>
+    <button type="button" class="btn btn-outline-dark" routerLink="../../../deposit/new-deposit/{{foundClient.id}}">Dodaj depozyt</button>
+    </div>
+  <br>
+  <div><a routerLink="../../loan/{{foundClient.id}}"> <h2>Kredyty gotówkowe: {{howmanyLoans}}</h2></a>
+    <button type="button" class="btn btn-outline-dark" routerLink="../../../loan/new-loan/{{foundClient.id}}">Dodaj kredyt/pożyczkę</button>
+     </div>
+  <br>
+  <div><a routerLink="../../mortgage/{{foundClient.id}}"> <h2>Kredyty hipoteczne: {{howmanyMortgages}}</h2></a>
+    <button type="button" class="btn btn-outline-dark" routerLink="../../../mortgage/new-mortgage/{{foundClient.id}}">Dodaj kredyt hipoteczny</button>
+     </div>
+  <br>
   <a routerLink="">Powrót do strony głównej</a>
 </div>
 

@@ -10,6 +10,7 @@
     "e2e": "ng e2e",
     "start": "http-server-spa dist/angular-my-clients-base index.html $PORT"
 
+
   },
   "private": true,
   "dependencies": {

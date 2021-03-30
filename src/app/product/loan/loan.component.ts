@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
 import {Loan} from '../../loan';
 import {environment} from '../../../environments/environment';
+import {Client} from '../../client';
 
 @Component({
   selector: 'app-product-loan',
@@ -16,11 +17,18 @@ export class LoanComponent implements OnInit{
     .params
     .clientId;
   loans: Loan[] = [];
+  client: Client = {
+    firstName: '',
+    lastName: '',
+    pesel: '',
+  };
   constructor(private httpClient: HttpClient, private activatedRoute: ActivatedRoute) {
   }
   ngOnInit(): void {
     this.httpClient.get<Loan[]>(this.url + this.clientId)
       .subscribe(loans => this.loans = loans);
+    this.httpClient.get<Client>(this.baseUrl + 'client/find-client/find-client-byId/' + this.clientId)
+      .subscribe(client => this.client = client);
   }
 
 }

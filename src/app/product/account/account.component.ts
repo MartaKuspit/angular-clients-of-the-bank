@@ -17,12 +17,19 @@ export class AccountComponent implements OnInit{
     .params
     .clientId;
   accounts: Account[] = [];
+  client: Client = {
+    firstName: '',
+    lastName: '',
+    pesel: '',
+  };
   constructor(private httpClient: HttpClient, private activatedRoute: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit(): void {
     this.httpClient.get<Account[]>(this.url + this.clientId )
       .subscribe(accounts => this.accounts = accounts);
+    this.httpClient.get<Client>(this.baseUrl + 'client/find-client/find-client-byId/' + this.clientId)
+      .subscribe(client => this.client = client);
   }
 
 }

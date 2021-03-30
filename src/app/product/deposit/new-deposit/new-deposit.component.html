@@ -1,0 +1,28 @@
+<div class="container">
+  <br>
+  <br>
+  <form class="row g-3" (ngSubmit)="addDeposit()">
+    <div class="col-md-4">
+      <div>
+        <label for="depositAmount" class="form-label">Kwota lokaty/depozytu </label>
+      </div>
+      <input type="number" id="depositAmount" class="form-control" placeholder="Kwota" name="depositAmount"
+             [(ngModel)]="newDeposit.depositAmount" name="depositAmount">
+    </div>
+    <div class="col-md-4">
+      <div>
+        <label for="interest" class="form-label">Oprocentowanie </label>
+      </div>
+      <input type="number" id="interest" class="form-control" placeholder="%"
+             [(ngModel)]="newDeposit.interest" name="interest">
+    </div>
+    <div class="col-12">
+      <br>
+      <button class="btn btn-primary" type="submit" >Dodaj depozyt</button>
+    </div>
+  </form>
+ <br>
+  <br>
+  <br>
+  <a routerLink="">Powrót do strony głównej</a>
+</div>

@@ -26,7 +26,8 @@
       <td>{{foundClient.firstName}}</td>
       <td>{{foundClient.lastName}}</td>
       <td>{{foundClient.pesel}}</td>
-      <td><a routerLink="../../../product/product-list/{{foundClient.id}}">Pokaż</a></td>
+      <td><button type="button" class="btn btn-outline-danger" routerLink="../../../product/product-list/{{foundClient.id}}">Pokaż produkty klienta</button></td>
+<!--        <a routerLink="../../../product/product-list/{{foundClient.id}}">Pokaż</a></td>-->
       <td><input type="button" value="Usuń" (click)="deleteClient(foundClient)">
         <br>
         <br>

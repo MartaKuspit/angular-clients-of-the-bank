@@ -1,0 +1,28 @@
+<div class="container">
+  <br>
+  <br>
+  <form class="row g-3" (ngSubmit)="addMortgage()">
+    <div class="col-md-4">
+      <div>
+        <label for="mortgageAmount" class="form-label">Kwota kredytu </label>
+      </div>
+      <input type="number" id="mortgageAmount" class="form-control"  name="mortgageAmount"
+             [(ngModel)]="newMortgage.mortgageAmount" name="mortgageAmount">
+    </div>
+    <div class="col-md-4">
+      <div>
+        <label for="interest" class="form-label">Oprocentowanie </label>
+      </div>
+      <input type="number" id="interest" class="form-control"
+             [(ngModel)]="newMortgage.interest" name="interest">
+    </div>
+    <div class="col-12">
+      <br>
+      <button class="btn btn-primary" type="submit" >Uruchom kredyt</button>
+    </div>
+  </form>
+ <br>
+  <br>
+  <br>
+  <a routerLink="">Powrót do strony głównej</a>
+</div>
