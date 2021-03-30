@@ -15,6 +15,7 @@
     <th scope="col">Imię</th>
     <th scope="col">Nazwisko</th>
     <th scope="col">Pesel</th>
+    <th scope="col">Produkty klienta</th>
     <th scope="col">Akcja</th>
   </tr>
   </thead>
@@ -24,6 +25,8 @@
     <td>{{foundClient.firstName}}</td>
     <td>{{foundClient.lastName}}</td>
     <td>{{foundClient.pesel}}</td>
+    <td><button type="button" class="btn btn-outline-danger"
+                routerLink="../../../product/product-list/{{foundClient.id}}">Pokaż produkty klienta</button></td>
     <td><input type="button" value="Usuń" (click)="deleteClient(foundClient)">
       <br>
       <br>
