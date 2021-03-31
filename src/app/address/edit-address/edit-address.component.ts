@@ -38,7 +38,7 @@ export class EditAddressComponent implements OnInit{
     }
 
   saveChangesInAddress(): void {
-    this.httpClient.put<Address>(this.baseUrl + '/address/addressToChange/' + this.addressId, this.newAddress)
+    this.httpClient.put<Address>(this.baseUrl + 'address/addressToChange/' + this.addressId, this.newAddress)
       .subscribe(
         () => {
           alert('Adres został zmieniony');
