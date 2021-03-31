@@ -31,7 +31,7 @@ export class AddressComponent {
     this.httpClient.post<Address>(this.baseUrl + 'address/' + clientId, this.newAddress)
       .subscribe(
         () => {alert('Adres został dodany do klienta');
-               this.router.navigate(['../../address/address-view' + clientId]);
+               this.router.navigate(['../../address/address-view/' + clientId]);
         },
         errorResponse => {
           this.submitted = true;
