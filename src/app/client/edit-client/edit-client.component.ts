@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Client} from '../../client';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {Address} from '../../address';
 import {ClientValidationErrors} from '../../clientValidationErrors';
@@ -33,7 +33,7 @@ export class EditClientComponent implements OnInit{
   validationErrors: ClientValidationErrors = {};
   submitted = false;
 
-  constructor(private activatedRoute: ActivatedRoute, private httpClient: HttpClient) {
+  constructor(private activatedRoute: ActivatedRoute, private httpClient: HttpClient, private router: Router) {
   }
   ngOnInit(): void {
     this.httpClient.get<Client>(this.baseUrl + 'client/find-client/find-client-byId' + '/' + this.clientId)
@@ -43,9 +43,11 @@ export class EditClientComponent implements OnInit{
 
 
   updateClient(): void {
-    this.httpClient.put(this.baseUrl + 'client/edit-client/' + this.clientId, this.editClient)
+    this.httpClient.put<Client>(this.baseUrl + 'client/edit-client/' + this.clientId, this.editClient)
       .subscribe(
-        () => alert('Dane klienta zostały zmodyfikowane'),
+        () => {alert('Dane klienta zostały zmodyfikowane');
+               this.router.navigate(['../../client/client-list']);
+        },
         errorResponse => {
           this.submitted = true;
           this.validationErrors = errorResponse.error;
