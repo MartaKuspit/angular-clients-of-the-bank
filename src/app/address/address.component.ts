@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {Address} from '../address';
 import {AddressValidationErrors} from '../addressValidationErrors';
@@ -23,14 +23,16 @@ export class AddressComponent {
   responses: AddressValidationErrors [];
   baseUrl = environment.baseUrl;
 
-  constructor(private activatedRoute: ActivatedRoute, private httpClient: HttpClient) {
+  constructor(private activatedRoute: ActivatedRoute, private httpClient: HttpClient, private router: Router) {
   }
 
   addAddressToClient(): void {
     const clientId: number = this.activatedRoute.snapshot.params.clientId;
     this.httpClient.post<Address>(this.baseUrl + 'address/' + clientId, this.newAddress)
       .subscribe(
-        () => alert('Adres został dodany do klienta'),
+        () => {alert('Adres został dodany do klienta');
+               this.router.navigate(['../../client/find-client/find-client-byId/' + clientId]);
+        },
         errorResponse => {
           this.submitted = true;
           this.validationErrors = errorResponse.error;
