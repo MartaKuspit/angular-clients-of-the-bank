@@ -12,7 +12,13 @@ import {environment} from '../../../environments/environment';
 export class EditAddressComponent implements OnInit{
   baseUrl = environment.baseUrl;
   addressId = this.activatedRoute.snapshot.params.addressId;
-  oldAddress: Address;
+  oldAddress: Address = {
+    street: '',
+    streetNumber: '',
+    flatNumber: '',
+    city: '',
+    zip: ''
+  };
   newAddress: Address = {
     id: this.addressId,
     street: '',
