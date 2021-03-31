@@ -46,7 +46,7 @@ export class EditClientComponent implements OnInit{
     this.httpClient.put<Client>(this.baseUrl + 'client/edit-client/' + this.clientId, this.editClient)
       .subscribe(
         () => {alert('Dane klienta zostały zmodyfikowane');
-               this.router.navigate(['../client-list']);
+               this.router.navigate(['../clients-list']);
         },
         errorResponse => {
           this.submitted = true;
