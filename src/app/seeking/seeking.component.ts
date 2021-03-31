@@ -28,7 +28,6 @@ export class SeekingComponent implements OnInit{
       .subscribe(clients => {
         if (this.clients !== null) {
           this.clients = clients;
-          this.seekingTheWord();
         }
         if (this.clients == null) {
           alert('Nieznaleziono podanej frazy. Spróbuj jeszcze raz!');
