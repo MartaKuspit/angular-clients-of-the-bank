@@ -26,12 +26,12 @@
       <td>{{foundClient.firstName}}</td>
       <td>{{foundClient.lastName}}</td>
       <td>{{foundClient.pesel}}</td>
-      <td><button type="button" class="btn btn-outline-danger"
+      <td><button type="button" class="btn btn-success"
                   routerLink="../../../product/product-list/{{foundClient.id}}">Pokaż produkty klienta</button></td>
-      <td><input type="button" value="Usuń" (click)="deleteClient(foundClient)">
+      <td><input type="button" class="btn btn-danger" value="Usuń" (click)="deleteClient(foundClient)">
         <br>
         <br>
-        <input type="button" value="Edytuj" routerLink="../../edit-client/{{foundClient.id}}"><br>
+        <input type="button" class="btn btn-info" value="Edytuj" routerLink="../../edit-client/{{foundClient.id}}"><br>
         <br>
       </td>
     </tr>
@@ -51,7 +51,7 @@
       <th scope="col">Nr mieszkania</th>
       <th scope="col">Kod pocztowy</th>
       <th scope="col">Miasto</th>
-      <th scope="col">?</th>
+      <th scope="col">Akcja</th>
     </tr>
     </thead>
     <tbody>
@@ -60,10 +60,10 @@
       <td>{{address.flatNumber}}</td>
       <td>{{address.zip}}</td>
       <td>{{address.city}}</td>
-      <td><input type="button" value="Usuń" (click)="deleteAddress(address)">
+      <td><input type="button" class="btn btn-danger" value="Usuń" (click)="deleteAddress(address)">
         <br>
         <br>
-        <input type="button" value="Edytuj" routerLink="../../../address/edit-address/{{address.id}}"><br>
+        <input type="button" class="btn btn-info" value="Edytuj" routerLink="../../../address/edit-address/{{address.id}}"><br>
         <br>
       </td>
     </tr>
