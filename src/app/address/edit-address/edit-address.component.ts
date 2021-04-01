@@ -42,7 +42,7 @@ export class EditAddressComponent implements OnInit{
       .subscribe(
         () => {
           alert('Adres został zmieniony');
-          this.router.navigate(['../../client/find-client']);
+          this.router.navigate(['../../client/clients-list/']);
         },
         errorResponse => {
           this.submitted = true;

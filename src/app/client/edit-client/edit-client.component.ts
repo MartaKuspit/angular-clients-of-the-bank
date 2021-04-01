@@ -12,18 +12,18 @@ import {environment} from '../../../environments/environment';
 })
 export class EditClientComponent implements OnInit{
   baseUrl = environment.baseUrl;
-  private url = this.baseUrl + 'client/edit-client/id';
+  // private url = this.baseUrl + 'client/edit-client/id';
   clientId: number = this.activatedRoute
     .snapshot
     .params
     .clientId;
-  editClient: Client = {
+  editingClient: Client = {
     firstName: '',
     lastName: '',
     pesel: '',
     addresses: []
   };
-  editingClient: Client = {
+  editClient: Client = {
     id: this.clientId,
     firstName: '',
     lastName: '',
@@ -37,15 +37,16 @@ export class EditClientComponent implements OnInit{
   }
   ngOnInit(): void {
     this.httpClient.get<Client>(this.baseUrl + 'client/find-client/find-client-byId' + '/' + this.clientId)
-      .subscribe(editingClient =>
-          this.editingClient = editingClient);
+      .subscribe(editingClient => this.editingClient = editingClient);
   }
 
 
   updateClient(): void {
     this.httpClient.put<Client>(this.baseUrl + 'client/edit-client/' + this.clientId, this.editClient)
       .subscribe(
-        () => alert('Dane klienta zostały zmodyfikowane'),
+        () => {alert('Dane klienta zostały zmodyfikowane');
+               this.router.navigate(['../client/clients-list']);
+        },
         errorResponse => {
           this.submitted = true;
           this.validationErrors = errorResponse.error;
