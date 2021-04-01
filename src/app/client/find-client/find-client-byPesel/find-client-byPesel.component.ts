@@ -53,7 +53,7 @@ export class FindClientByPeselComponent {
     this.httpClient.delete(this.baseUrl + 'client/find-client/find-client-byId/' + this.clientId)
       .subscribe(() => {
         alert('Klient został usunięty');
-        this.router.navigate(['../../client/find-client']);
+        this.router.navigate(['../../client/clients-list']);
       });
   }
 

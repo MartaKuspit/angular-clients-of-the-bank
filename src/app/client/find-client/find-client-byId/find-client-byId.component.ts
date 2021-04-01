@@ -55,7 +55,7 @@ export class FindClientByIdComponent {
     this.httpClient.delete(this.url + '/' + this.clientId)
       .subscribe(() => {
         alert('Klient został usunięty');
-        this.router.navigate(['../../client/find-client']);
+        this.router.navigate(['../../client/clients-list']);
       });
   }
 
