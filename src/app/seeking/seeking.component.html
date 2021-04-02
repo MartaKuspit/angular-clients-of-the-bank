@@ -32,7 +32,7 @@
     </tbody>
   </table>
   <div *ngIf="seekword.startsWith('poz') || seekword.includes('poż') || seekword.includes('kre')"> Kredyty gotówkowe/Pożyczki</div>
-  <table class="table table-striped" *ngIf="seekword.includes('poz') || seekword.includes('poż') || seekword.includes('kre')">
+  <table class="table table-striped" *ngIf="seekword.startsWith('poz') || seekword.includes('poż') || seekword.includes('kre')">
   <thead>
     <tr>
       <th scope="col">Id </th>
